@@ -1,0 +1,148 @@
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header-table td {
+  padding: 0;
+}
+
+.logo-cell {
+  text-align: center;
+}
+
+.logo-img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: saturate(0.9);
+}
+
+.nav-bar {
+  width: 100%;
+  background-color: #ffffff; /* white navbar */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center; /* center the nav content */
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 16px;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 20px;
+  flex-wrap: wrap;
+}
+
+.nav-item { }
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 8px 10px;
+  color: #0e0e0e; /* dark text on white */
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 4px;
+  height: 2px;
+  background: #000080; /* navy hover underline */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after { transform: scaleX(1); }
+
+.nav-link.active {
+  color: #0e0e0e;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.button1 {
+  background-color: transparent;
+  color: var(--perfume-black);
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  padding: 8px 18px;
+  border-radius: 20px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.button1:hover {
+  transform: translateY(-1px);
+  color: #000080;
+  background-color: var(--perfume-accent);
+  border-color: var(--perfume-accent);
+}
+
+.button1:active {
+  background-color: var(--perfume-accent-dark);
+  transform: translateY(0);
+  color: #000080;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    width: 220px;
+  }
+
+  .button1 {
+    width: auto;
+    padding: 8px 14px;
+    text-align: center;
+    font-size: 10px;
+
+  }
+
+  .nav-bar {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+}
